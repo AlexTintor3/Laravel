@@ -1,8 +1,8 @@
 <?php
 
-Route::get('/', function () {
-return view('home');
-});
+#Route::get('/', function () {
+#return view('home');
+#});
 
 Route::get('/login' , function() {
 return view('auth.login');
@@ -36,6 +36,17 @@ return 'Logout usuario';
 #return 'Añadir pelicula';
 #});
 
+#CONTROLLERS
+
+Route::get('/', 'HomeController@getHome');
+
+Route::get('/catalog', 'CatalogController@getIndex');
+
+Route::get('/catalog/show/{id}', 'CatalogController@getShow');
+
+Route::get('/catalog/create', 'CatalogController@getCreate');
+
+Route::get('/catalog/edit/{id}', 'CatalogController@getEdit');
 
 
 ?>
