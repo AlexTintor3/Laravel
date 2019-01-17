@@ -6,8 +6,32 @@
   </head>
   <body>
   	@extends('layouts.master')
-	@section('content')
-		Vista detalle peliculas
+  	@section('content')
+
+		<div class="row">
+      <div class="col-sm-4">
+        <img src="{{$arrayPeliculas['poster']}}" style="width:100%"/>
+      </div>
+      <div class="col-sm-8">
+        <h1> {{$arrayPeliculas['title']}} </h1>
+        <h5> Año: {{$arrayPeliculas['year']}} </h5>
+        <h5> Director: {{$arrayPeliculas['director']}} </h5>
+        <br>
+        <p> <b>Resumen:</b> {{$arrayPeliculas['synopsis']}} </p>
+        <br>
+        <p> <b>Estado:</b> @if($arrayPeliculas['rented']==false)
+          Pelicula Disponible<br><br>
+          <button class="btn btn-default" style="background:blue;color:white;border:1px solid #D7DBDD;" type="submit">Alquilar película</button>
+          <button class="btn btn-default" style="background:orange;color:white;border:1px solid #D7DBDD;" type="submit">Editar película</button>
+          <button class="btn btn-default" style="background:white;color:black;border:1px solid #D7DBDD;"" type="submit">Volver al listado</button>
+
+          @else Pelicula actualmente alquiladas<br><br>
+          <button class="btn btn-default" style="background:red;color:white;border:1px solid #D7DBDD;" type="submit">Devolver película</button>
+          <button class="btn btn-default" style="background:orange;color:white;border:1px solid #D7DBDD;" type="submit">Editar película</button>
+          <button class="btn btn-default" style="background:white;color:black;border:1px solid #D7DBDD;" type="submit">Volver al listado</button>
+          @endif
+      </div>
+    </div>
 	@stop
   </body>
 </html>
