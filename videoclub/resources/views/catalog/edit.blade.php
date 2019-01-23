@@ -19,27 +19,27 @@
             {{ csrf_field() }}
             <div class="form-group">
                <label for="title">Título</label>
-               <input type="text" name="title" id="title" class="form-control">
+               <input type="text" name="title" id="title" class="form-control" value="{{$arrayPeliculas->title}}">
             </div>
 
             <div class="form-group">
               <label for="year">Año</label>
-               <input type="text" name="year" id="year">
+               <input type="text" name="year" id="year" value="{{$arrayPeliculas->year}}">
             </div>
 
             <div class="form-group">
               <label for="director">Director</label>
-               <input type="text" name="director" id="director">
+               <input type="text" name="director" id="director" value="{{$arrayPeliculas->director}}">
             </div>
 
             <div class="form-group">
               <label for="poster">Poster</label>
-               <input type="text" name="poster" id="poster">
+               <input type="text" name="poster" id="poster" value="{{$arrayPeliculas->poster}}">
             </div>
 
             <div class="form-group">
                <label for="synopsis">Resumen</label>
-               <textarea name="synopsis" id="synopsis" class="form-control" rows="3"></textarea>
+               <textarea name="synopsis" id="synopsis" class="form-control" rows="3">{{$arrayPeliculas->synopsis}}</textarea >
             </div>
 
             <div class="form-group text-center">
